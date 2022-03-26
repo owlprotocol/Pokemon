@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@multiformats/sha3": "^2.0.8",
-    "@owlprotocol/ipfs-trees": "^0.1.5",
+    "@owlprotocol/ipfs-trees": "0.1.7",
     "body-parser": "^1.19.2",
     "chai": "^4.3.6",
     "connect-flash": "^0.1.1",

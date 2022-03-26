@@ -1,7 +1,7 @@
 const { IPFSTree, IPFSSingleton } = require('@owlprotocol/ipfs-trees');
 const { keccak256 } = require('@multiformats/sha3');
-const ipfs = require('ipfs-core');
-// const { create } = require('ipfs-http-client');
+// const ipfs = require('ipfs-core');
+const { create } = require('ipfs-http-client');
 const pokemon = require('../models/pokemon');
 
 const hash = (v) => Buffer.from(
@@ -10,46 +10,46 @@ const hash = (v) => Buffer.from(
 
 const uploadedLeafs = [];
 let tree;
-// const auth = 'Basic ' + Buffer.from('26l0jWtRhYtMnYyg3pjKGNSckwq' + ':' + 'fb815f4ebd3a1a67f92372016867dd66').toString('base64');
-// const ipfsClient = create({ url: 'https://ipfs.infura.io:5001/api/v0/', header: { authorization: auth }});
-// IPFSSingleton.setIPFS(ipfsClient);
-// tree = IPFSTree.createNull();
-ipfs.create().then(
- (c) => {
+const auth = 'Basic ' + Buffer.from('26l0jWtRhYtMnYyg3pjKGNSckwq' + ':' + 'fb815f4ebd3a1a67f92372016867dd66').toString('base64');
+const ipfsClient = create({ url: 'https://ipfs.infura.io:5001/api/v0/', header: { authorization: auth }});
+IPFSSingleton.setIPFS(ipfsClient);
+tree = IPFSTree.createNull();
+// ipfs.create().then(
+//  (c) => {
 
-    // const config = {
-    //     Addresses: {
-    //         Swarm: [
-    //         // '/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/',
-    //         // '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/',
-    //         // '/dns4/webrtc-star.discovery.libp2p.io/tcp/443/wss/p2p-webrtc-star/'
-    //         ]
-    //     }
-    // }
+//     // const config = {
+//     //     Addresses: {
+//     //         Swarm: [
+//     //         // '/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/',
+//     //         // '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/',
+//     //         // '/dns4/webrtc-star.discovery.libp2p.io/tcp/443/wss/p2p-webrtc-star/'
+//     //         ]
+//     //     }
+//     // }
 
-    // c.config.set('Addresses', {});
+//     // c.config.set('Addresses', {});
 
 
 
-    IPFSSingleton.setIPFS(c);
-    tree = IPFSTree.createNull();
+//     IPFSSingleton.setIPFS(c);
+//     tree = IPFSTree.createNull();
    
 
-    // tree.setJSON("abc", { abc: 123 });
-    // tree.set
+//     // tree.setJSON("abc", { abc: 123 });
+//     // tree.set
     
-    // const uploadedLeafs = [];
-    //                  Sample Pokemons
-    //===============================================================
-    // tree .create({ "name": "charizard", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891763-006charizard.png" }, );
-    // // tree = tree.setJSON()
-    // for (const pok of defaultpokemon)
-    //     tree.setJSON(hash(pok), pok).then((t) => {tree = t; uploadedLeafs.push(pok)});
-    // // Uploaded cid hashes
-    // console.log(`Pushed hashes: ${uploadedLeafs}`);
+//     // const uploadedLeafs = [];
+//     //                  Sample Pokemons
+//     //===============================================================
+//     // tree .create({ "name": "charizard", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891763-006charizard.png" }, );
+//     // // tree = tree.setJSON()
+//     // for (const pok of defaultpokemon)
+//     //     tree.setJSON(hash(pok), pok).then((t) => {tree = t; uploadedLeafs.push(pok)});
+//     // // Uploaded cid hashes
+//     // console.log(`Pushed hashes: ${uploadedLeafs}`);
     
-    }
-); //('https://ipfs.infura.io:5001/api/v0'); //, header: { authorization: auth }});
+//     }
+// ); //('https://ipfs.infura.io:5001/api/v0'); //, header: { authorization: auth }});
 
 var defaultpokemon = [
     { "name": "pikachu", "img": "https://static.posters.cz/image/1300/poster/pokemon-pikachu-neon-i71936.jpg" },

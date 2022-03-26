@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@multiformats/sha3': ^2.0.8
-  '@owlprotocol/ipfs-trees': ^0.1.5
+  '@owlprotocol/ipfs-trees': 0.1.7
   body-parser: ^1.19.2
   chai: ^4.3.6
   connect-flash: ^0.1.1
@@ -22,7 +22,7 @@ specifiers:
 
 dependencies:
   '@multiformats/sha3': 2.0.8
-  '@owlprotocol/ipfs-trees': 0.1.5
+  '@owlprotocol/ipfs-trees': 0.1.7
   body-parser: 1.19.2
   chai: 4.3.6
   connect-flash: 0.1.1
@@ -133,8 +133,8 @@ packages:
     resolution: {integrity: sha512-sZ1W6gQzYnu45wPrWx8D3kwI2/U29VYTx9OjbDAd7jwRItJ0cSTMPRL/C8AWZFn9kWFLQGqEXVEE86w4Z8LpIQ==}
     dev: false
 
-  /@owlprotocol/ipfs-trees/0.1.5:
-    resolution: {integrity: sha512-glPyMRajrXKbUWgWuhQLbd5gGcUq+cLCbo3ZD927Cjw/oR19vXVD0AhpUhEH41aZR37exfmFexAQSefb6Pt+mA==}
+  /@owlprotocol/ipfs-trees/0.1.7:
+    resolution: {integrity: sha512-XUW+8Ei+bA9/EwyNxDGbMc4OsPvPiLFFthEYrx8eJjwHWNMauDggn3Cyk5LqZfgn2qUEL1qPehdeBltyAmKjrw==}
     requiresBuild: true
     dependencies:
       '@ipld/dag-cbor': 7.0.1
