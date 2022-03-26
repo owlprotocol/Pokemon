@@ -12,6 +12,9 @@ var express = require("express"),
     env = require("dotenv");
 env.config();
 
+//
+app.use('/favicon.png', express.static('public/images/icons8-internet-16.png'));
+
 //Requiring ROUTES
 var pokemonRoutes = require("./routes/pokemons"),
     commentRoutes = require("./routes/comments"),
@@ -65,21 +68,6 @@ app.get("/", function(req, res) {
 app.use("/", indexRoutes);
 app.use("/pokemon", pokemonRoutes);
 app.use("/pokemon/:id/comments", commentRoutes);
-
-//                  Sample Pokemons
-//===============================================================
-// Pokemon.create({ "name": "charizard", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891763-006charizard.png" }, );
-// var pokemon = [
-//     { "name": "pikachu", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/0/6087/2437349-pikachu.png" },
-//     { "name": "charizard", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891763-006charizard.png" },
-//     { "name": "snorlax", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/0/4986/406919-143snorlax.png" },
-//     { "name": "gyarados", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891635-130gyarados.png" },
-//     { "name": "alakazam", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891836-065alakazam.png" },
-//     { "name": "rapidash", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1892310-078rapidash.png" },
-//     { "name": "onix", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891842-095onix.png" },
-//     { "name": "mewtwo", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1895869-150mewtwo.png" }
-// ];
-//===============================================================
 
 //listening to port given by environment / 8080 if local environment
 var port = process.env.PORT || 8080;

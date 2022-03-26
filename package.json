@@ -9,17 +9,23 @@
   "author": "sparsh jain",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "@multiformats/sha3": "^2.0.8",
+    "@owlprotocol/ipfs-trees": "^0.1.5",
+    "body-parser": "^1.19.2",
+    "chai": "^4.3.6",
     "connect-flash": "^0.1.1",
-    "dotenv": "^8.2.0",
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "express-session": "^1.17.0",
+    "dotenv": "^8.6.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "ipfs-core": "^0.14.1",
+    "ipfs-http-client": "^56.0.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.8.9",
-    "nodemon": "^2.0.2",
+    "mongoose": "^5.13.14",
+    "nodemon": "^2.0.15",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1"
+    "passport-local-mongoose": "^5.0.1",
+    "serve-favicon": "^2.5.0"
   }
 }

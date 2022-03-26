@@ -22,10 +22,9 @@
                         <%= pokemon.description %>
                     </p>
                     <p><em>Submitted by
-                        <%=pokemon.author.username%>
+                        <%= pokemon.authorUsername %>
                     </em>
                     </p>
-                    <% if(currentUser && pokemon.author.id.equals(currentUser._id)){ %>
                         <div class="ui buttons">
                             <a class="small ui orange button" href="/pokemon/<%=pokemon._id%>/edit">Edit</a>
                             <div class="or"></div>
@@ -34,38 +33,8 @@
                                 <button class="small ui red button">Delete</button>
                             </form>
                         </div>
-                        <%}%>
                 </div>
 
-                <div class="well">
-                    <div class="text-right">
-                        <a href="/pokemon/<%= pokemon._id %>/comments/new" class="medium ui green button">Add a
-                comment</a>
-                    </div>
-                    <hr>
-                    <% pokemon.comments.forEach(element => { %>
-
-                        <div class="row comment">
-                            <div class="col-md-12">
-                                <strong><%=element.author.username%></strong>
-                                <p>
-
-                                    <%= element.text %>
-                                </p>
-
-                                <% if(currentUser && element.author.id.equals(currentUser._id)){ %>
-
-                                    <a class="mini ui left attached orange button" href="/pokemon/<%=pokemon._id%>/comments/<%=element._id%>/edit">Edit</a>
-                                    <form style="display: inline;" action="/pokemon/<%=pokemon._id%>/comments/<%=element._id%>?_method=DELETE" method="POST">
-                                        <button class="right attached mini ui red button">Delete</button>
-                                    </form>
-
-                                    <%}%>
-                            </div>
-                        </div>
-                        <br>
-                        <% }); %>
-                </div>
             </div>
         </div>
         <div class="col-md-9">
